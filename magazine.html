@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f6;
+      font-family: monospace;
+    }
+
+    .magazine {
+      max-width: 360px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .mag-img {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #ff6b9d;
+      background: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="magazine">
+  <img id="photo" class="mag-img" />
+  <h2 id="title"></h2>
+  <p id="desc"></p>
+
+  <audio id="player" controls></audio>
+
+  <button id="nextBtn">Next ➡️</button>
+</div>
+
+  <!-- SCRIPT MUST BE AT BOTTOM -->
+<script>
+const slides = [
+  {
+    img: "photos/first-date.png",
+    title: "First date 💖",
+    desc: "That day, I knew you were special.",
+    song: "songs/first-date.mp3"
+  },
+  {
+    img: "photos/horror.png",
+    title: "Our first horror movie 👻",
+    desc: "Do you remember what you were doing the whole time?? 🌚",
+    song: "songs/horror.mp3"
+  },
+  {
+    img: "photos/puja.png",
+    title: "Our first puja 🪔",
+    desc: "The way you cared for my cramp that day made me feel deeply loved.",
+    song: "songs/puja.mp3"
+  },
+  {
+    img: "photos/bike.png",
+    title: "First bike ride 🏍️",
+    desc: "That kiss while riding — unforgettable 😘",
+    song: "songs/bike.mp3"
+  },
+  {
+    img: "photos/silly.png",
+    title: "Our endless chit chats 💬",
+    desc: "Two silly cats talking about everything and nothing.",
+    song: "songs/silly.mp3"
+  },
+  {
+    img: "photos/christmas.png",
+    title: "Our Christmas 🎄",
+    desc: "Almost non-stop bike riding throughout the city!!",
+    song: "songs/christmas.mp3"
+  }
+];
+
+let index = 0;
+
+const photo  = document.getElementById("photo");
+const title  = document.getElementById("title");
+const desc   = document.getElementById("desc");
+const player = document.getElementById("player");
+const nextBtn = document.getElementById("nextBtn");
+
+function showSlide(i) {
+  const slide = slides[i];
+
+  photo.src = slide.img;
+  title.textContent = slide.title;
+  desc.textContent  = slide.desc;
+
+  // 🎵 change song
+  player.pause();
+  player.src = slide.song;
+  player.currentTime = 0;
+
+  // mobile-safe play
+  player.play().catch(() => {});
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+});
+
+// load first slide
+showSlide(index);
+</script>
+
+</body>
+</html>

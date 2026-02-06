@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #fff0f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+}
+
+/* MAIN WINDOW */
+.window {
+  width: 90%;
+  max-width: 360px;
+  background: #ffd6e8;
+  border: 6px solid #ff6b9d;
+  box-shadow: 0 0 0 4px #fff;
+}
+
+/* TITLE BAR */
+.title-bar {
+  background: #ff6b9d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+/* HEART ROW */
+.hearts {
+  text-align: center;
+  padding: 6px;
+  background: #ffc1d9;
+  color: #ff3366;
+  letter-spacing: 6px;
+}
+
+/* CONTENT */
+.content {
+  padding: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffd6e8,
+    #ffd6e8 10px,
+    #ffc1d9 10px,
+    #ffc1d9 20px
+  );
+  text-align: center;
+}
+
+.question {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.cat {
+  width: 110px;
+  margin: 10px 0;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 3px solid #ff6b9d;
+  background: #fff;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff6b9d;
+  color: white;
+}
+.magazine {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+.cat {
+  width: 220px;        /* 🔥 increase size (try 200–260px) */
+  max-width: 80vw;     /* keeps it mobile-safe */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+.mag-img {
+  width: 100%;
+  max-width: 320px;   /* 👈 key line (controls size) */
+  height: auto;
+  border-radius: 12px;
+  margin: 12px auto;
+  display: block;
+  object-fit: cover;
+}
